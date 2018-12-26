@@ -68,11 +68,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showCustomSnackBar() {
-        Snackbar snackbar = Snackbar.make(rootLayout, "Error Deleting File", Snackbar.LENGTH_LONG)
+        Snackbar snackbar = Snackbar.make(rootLayout, "No network connection", Snackbar.LENGTH_LONG)
                 .setAction("RETRY", new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         // Do something
+                        Snackbar.make(rootLayout, "Connected", Snackbar.LENGTH_SHORT).show();
                     }
                 });
 
@@ -83,11 +84,6 @@ public class MainActivity extends AppCompatActivity {
         TextView textView = (TextView) snackbarLayout.findViewById(android.support.design.R.id.snackbar_text);
         textView.setTextColor(Color.DKGRAY);
 
-        // OR Change Action Button Text Color
-        //      Button btn = (Button) snackbarLayout.findViewById(android.support.design.R.id.snackbar_action);
-        //	btn.setTextColor(Color.WHITE);
-
-        // Changing Action Button Text Color
         snackbar.setActionTextColor(Color.WHITE);
 
 
